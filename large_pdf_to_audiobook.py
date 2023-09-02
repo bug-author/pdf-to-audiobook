@@ -22,7 +22,7 @@ def merge_audio_files(audio_files, output_file):
     combined.export(output_file, format="mp3")
 
 if __name__ == "__main__":
-    pdf_path = "large_sample.pdf"
+    pdf_path = "sample.pdf"
     total_pages = len(pdfplumber.open(pdf_path).pages)
     chunk_size = 10
     audio_files = []
@@ -37,6 +37,6 @@ if __name__ == "__main__":
             text_to_audio_mac(extracted_text, output_path=audio_output_path)
             audio_files.append(audio_output_path)
     
-    merge_audio_files(audio_files, "large_sample_audiobook.mp3")
+    merge_audio_files(audio_files, "sample_audiobook.mp3")
     for audio_file in audio_files:
         os.remove(audio_file)
